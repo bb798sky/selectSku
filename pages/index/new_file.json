@@ -1,0 +1,33 @@
+[{
+		"attr_name": "内存",
+		"attrs": [{
+			"attr_name": "4G",
+			"id": 381,
+			"superior_id": 380
+		}, {
+			"attr_name": "8G",
+			"id": 382,
+			"superior_id": 380
+		}, {
+			"attr_name": "16G",
+			"id": 383,
+			"superior_id": 380
+		}],
+		"id": 380,
+		"superior_id": 0
+	},
+	{
+		"attr_name": "颜色",
+		"attrs": [{
+			"attr_name": "灰色",
+			"id": 386,
+			"superior_id": 385
+		}, {
+			"attr_name": "白色",
+			"id": 387,
+			"superior_id": 380
+		}],
+		"id": 385,
+		"superior_id": 0
+	}
+]
