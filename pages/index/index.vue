@@ -18,6 +18,7 @@
 				</view>
 			</view>
 		</view>
+		<navigator  url="../noStock/index"><button type="primary">没有库存的情况</button></navigator>
 	</view>
 </template>
 

@@ -24,18 +24,18 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.skuBox.data-v-faec7588 {
-  height: 400rpx;
+.skuBox.data-v-7c6db282 {
+  height: 800rpx;
   overflow-y: scroll;
 }
-.skuBox .color.data-v-faec7588 {
+.skuBox .color.data-v-7c6db282 {
     height: 200rpx;
     border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
 }
-.skuBox .color .title.data-v-faec7588 {
+.skuBox .color .title.data-v-7c6db282 {
       font-size: .8rem;
 }
-.skuBox .color .color_item_container.data-v-faec7588 {
+.skuBox .color .color_item_container.data-v-7c6db282 {
       height: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -55,7 +55,7 @@
               justify-content: start;
       margin-top: 40rpx;
 }
-.skuBox .color .color_item_container .color_item.data-v-faec7588 {
+.skuBox .color .color_item_container .color_item.data-v-7c6db282 {
         margin-right: 35rpx;
         margin-bottom: 20rpx;
         position: relative;
@@ -67,8 +67,12 @@
         text-align: center;
         border-radius: 10rpx;
 }
-.skuBox .color .color_item_container .active.data-v-faec7588 {
+.skuBox .color .color_item_container .active.data-v-7c6db282 {
         background: peachpuff;
         border: 1rpx solid #E94D68;
+}
+.skuBox .color .color_item_container .disable.data-v-7c6db282 {
+        background: lightgray;
+        border: #444444;
 }
 
