@@ -72,6 +72,7 @@
         border: 1rpx solid #E94D68;
 }
 .skuBox .color .color_item_container .disable.data-v-7c6db282 {
+        pointer-events: none;
         background: lightgray;
         border: #444444;
 }
