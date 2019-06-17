@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/evaluate/index",
     "pages/swiper-view/index",
     "pages/index/index"
   ],

@@ -1,0 +1,1 @@
+<import src="/pages/components/evaluate-star/evaluate-star.vue.wxml" /><template name="0a683727"><view class="_view 0a683727 uni-rate"><template bindchange="handleProxy" data-eventid="{{'0a683727-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'0a683727-0'],$root}}" is="7519ea8f"></template></view></template>
