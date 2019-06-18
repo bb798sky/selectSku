@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/upload-img/index",
     "pages/evaluate/index",
     "pages/swiper-view/index",
     "pages/index/index"

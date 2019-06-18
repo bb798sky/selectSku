@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import EvaluateStar from "../components/evaluate-star/evaluate-star.vue";
+import EvaluateStar from "./components/evaluate-star/evaluate-star.vue";
 export default {
   name: "uni-rate",
   components: {
