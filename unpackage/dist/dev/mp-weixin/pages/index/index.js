@@ -113,140 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  data: function data() {
-    return {
-      // 01.规格选择
-      selectArr: [], //存放被选中的值
-      shopItemInfo: {}, //存放要和选中的值进行匹配的数据
-      subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
-      // 02.规格显示
-      skuShow: null,
-      guigedata: {} };
-
-  },
-
-  onLoad: function onLoad() {var _this = this;
-    uni.request({
-      url: 'https://www.easy-mock.com/mock/5cdd6b00fd487e51be5eb0a0/',
-      data: {},
-      header: {},
-      success: function success(res) {
-        _this.guigedata = res.data.guige_data;
-        _this.setData();
-      },
-      fail: function fail(err) {
-        console.log(err);
-      } });
-
-  },
-
-  methods: {
-    setData: function setData() {
-      var sku = this.guigedata.sku;
-      for (var i = 0, len = sku.length; i < len; i++) {
-        this.shopItemInfo[sku[i].attr_ids.replace(/\//g, ",")] = sku[i];
-        /* 
-                                                                         * 修改数据结构格式，用规格组成的id用逗号分割作属性名
-                                                                         *  */
-      }
-      this.checkItem();
-    },
-
-    // 01.规格选择
-    specificationBtn: function specificationBtn(item, n, event, index) {
-      /* 
-                                                                         * n是外层循环，index是内层循环
-                                                                         * item是数据项
-                                                                         * event事件对象
-                                                                         *  */
-      if (this.selectArr[n] != item) {
-        /* 
-                                      * n是外层索引，也就是颜色、尺寸这样的规格类别
-                                      * (this.selectArr[n] != item) 也就是这一类规格没有再点击一样的
-                                      *  */
-        this.selectArr[n] = item;
-        this.subIndex[n] = index;
-      } else {
-        /* 
-              * 如果是点击了这一类里刚点击了的规格，则去除选中态
-              * 也就是点击了选中再点击去除选中
-              * */
-        this.selectArr[n] = "";
-        this.subIndex[n] = -1; //去掉选中的颜色
-      }
-      this.checkItem();
-    },
-    checkItem: function checkItem() {
-      var option = this.guigedata.apec_attr;
-      var result = []; //定义数组存储已经被选中的值
-      var len = option.length;
-      for (var i = 0; i < len; i++) {
-        result[i] = this.selectArr[i] ? this.selectArr[i] : "";
-      }
-      for (var _i = 0; _i < len; _i++) {
-        var last = result[_i]; //把选中的值存放到字符串last去
-        var leng = option[_i].attrs.length;
-        for (var k = 0; k < leng; k++) {
-          result[_i] = option[_i].attrs[k].id; //赋值，存在直接覆盖，不存在往里面添加id值
-          /* 
-          * 循环判断每一个规格项
-          * 在数据里面添加字段isShow来判断是否可以选择
-          * 
-          *  */
-          option[_i].attrs[k].isShow = this.isMay(result);
-          /* 
-                                                           *  因为this.guigedata.apec_attr是一个对象，
-                                                           * option是指向这个对象的引用
-                                                           * 对option数据改动this.guigedata.apec_attr也会跟着改动
-                                                           * 用this.guigedata.apec_attr来渲染的oItem项数据也跟着变动
-                                                           * 
-                                                           *  */
-          // console.log(this.guigedata.apec_attr[i].attrs[k].isShow,'===',option[i].attrs[k].isShow)
-        }
-        result[_i] = last; //还原，目的是记录点下去那个值，避免下一次执行循环时避免被覆盖
-      }
-      this.$forceUpdate(); //重绘
-    },
-    isMay: function isMay(result) {
-      console.log(result);
-      var len = result.length;
-      for (var i = 0; i < len; i++) {
-        if (result[i] == "") {
-          return true; //如果数组里有为空的值，那直接返回true
-        }
-      }
-      return this.shopItemInfo[result].stock == 0 ? false : true; //匹配选中的数据的库存，若不为空返回true反之返回false
-    } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -276,52 +143,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("view", { staticClass: "container" }, [
-    _vm.guigedata
-      ? _c(
-          "view",
-          { staticClass: "skuBox" },
-          _vm._l(_vm.guigedata.apec_attr, function(specs, n) {
-            return _c("view", { key: n, staticClass: "color" }, [
-              _c("view", { staticClass: "type_contnent_box" }, [
-                _c("view", { staticClass: "title" }, [
-                  _vm._v(_vm._s(specs.attr_name))
-                ]),
-                _c(
-                  "view",
-                  { staticClass: "color_item_container" },
-                  _vm._l(specs.attrs, function(oItem, index) {
-                    return _c(
-                      "view",
-                      {
-                        key: index,
-                        staticClass: "color_item",
-                        class: [
-                          oItem.isShow ? "" : "disable",
-                          _vm.subIndex[n] == index ? "active" : ""
-                        ],
-                        attrs: {
-                          "data-id": index + "" + index,
-                          "data-sku": oItem.attr_name,
-                          "data-skucode": oItem.id,
-                          eventid: "4fb339ea-0-" + n + "-" + index
-                        },
-                        on: {
-                          click: function($event) {
-                            _vm.specificationBtn(oItem.id, n, $event, index)
-                          }
-                        }
-                      },
-                      [_vm._v(_vm._s(oItem.attr_name))]
-                    )
-                  })
-                )
-              ])
-            ])
-          })
-        )
-      : _vm._e()
-  ])
+  return _c(
+    "view",
+    { staticClass: "container" },
+    [
+      _c("navigator", { attrs: { url: "../selectSku/index" } }, [
+        _c("view", { staticClass: "item" }, [_vm._v("选择规格")])
+      ]),
+      _c("navigator", { attrs: { url: "../swiper-view/index" } }, [
+        _c("view", { staticClass: "item" }, [_vm._v("滑动导航")])
+      ]),
+      _c("navigator", { attrs: { url: "../upload-img/index" } }, [
+        _c("view", { staticClass: "item" }, [_vm._v("上传图片")])
+      ]),
+      _c("navigator", { attrs: { url: "../evaluate/index" } }, [
+        _c("view", { staticClass: "item" }, [_vm._v("评价星星")])
+      ]),
+      _c("navigator", { attrs: { url: "../swiperAction/index" } }, [
+        _c("view", { staticClass: "item" }, [_vm._v("滑动操作")])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

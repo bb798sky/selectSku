@@ -1,1 +1,4 @@
+<import src="/pages/swiperAction/components/uni-swipe-action.vue.wxml" />
+
+<template name="1eca0a1c-default-1eca0a1c-0"><view class="_view 1eca0a1c cont">SwipeAction 基础使用场景</view></template>
 

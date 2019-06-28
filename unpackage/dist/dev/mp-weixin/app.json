@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/colorUiTest/tabSwitch/index",
+    "pages/swiperAction/index",
     "pages/upload-img/index",
     "pages/evaluate/index",
     "pages/swiper-view/index",
-    "pages/index/index"
+    "pages/selectSku/index"
   ],
   "subPackages": [],
   "window": {

@@ -1,0 +1,1 @@
+<import src="/pages/swiperAction/components/uni-swipe-action.vue.wxml" /><template name="1eca0a1c"><view class="_view 1eca0a1c"><template data="{{...$root['0'], ...$root[$kk+'1eca0a1c-0'],$root, $slotdefault:'1eca0a1c-default-1eca0a1c-0'}}" is="a0e354ee"></template></view></template>
